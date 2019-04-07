@@ -1,11 +1,11 @@
-/*	Biblioteca do Algoritmo de Pesquisa de Dados: Busca Bin·ria de um Array
+/*	Biblioteca do Algoritmo de Pesquisa de Dados: Busca Bin√°ria de um Array
 
 	Autor: Alexandre Gadelha
 	
-	Com a Letra a ser buscada informada na FunÁ„o Principal ou via FunÁ„o comum, acha-se o ÕNDICE desse
-	elemento primeiro no Vetor pra depois realizar a Busca Bin·ria com base no ÕNDICE deste.
+	Com a Letra a ser buscada informada na Fun√ß√£o Principal ou via Fun√ß√£o comum, acha-se o √çNDICE desse
+	elemento primeiro no Vetor pra depois realizar a Busca Bin√°ria com base no √çNDICE deste.
 	
-	Se N√O for encontrado o elemento no Vetor, nenhum ÕNDICE ser· obtido e a Busca N√O ir· ocorrer.
+	Se N√ÉO for encontrado o elemento no Vetor, nenhum √çNDICE ser√° obtido e a Busca N√ÉO ir√° ocorrer.
 */
 void binarySearchArray (char vetor[], int &extEsq, int &extDir, int indiletra)
 {
@@ -17,7 +17,7 @@ void binarySearchArray (char vetor[], int &extEsq, int &extDir, int indiletra)
 	{
 		if (indiletra == indipivot)
 		{
-			printf ("\n\nA Letra [%c] informada foi encontrada na posiÁ„o %d durante a Busca Bin·ria no Vetor!", vetor[indiletra], indipivot);
+			printf ("\n\nA Letra [%c] informada foi encontrada na posi√ß√£o %d durante a Busca Bin√°ria no Vetor!", vetor[indiletra], indipivot);
 		}
 		else if (indiletra > indipivot)
 		{
@@ -53,7 +53,7 @@ void indexElementSearch (char vetor[], char letra)
 	
 	if (!achou)
 	{
-		printf ("\n\nA Letra [%c] informada N√O foi encontrada no Vetor e nem foi possÌvel buscar seu Õndice!", letra);
+		printf ("\n\nA Letra [%c] informada N√ÉO foi encontrada no Vetor e nem foi poss√≠vel buscar seu √çndice!", letra);
 	}
 	else
 	{
