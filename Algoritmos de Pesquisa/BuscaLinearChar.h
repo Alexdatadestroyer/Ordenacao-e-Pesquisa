@@ -11,7 +11,7 @@ void linearSearchArray (char vetor[], char letra)
 	{
 		if (letra == vetor[i])
 		{
-			printf ("\n\nLetra [%c] foi encontrada na String na posiÁ„o %d com sucesso!", letra, i);
+			printf ("\n\nLetra [%c] foi encontrada na String na posi√ß√£o %d com sucesso!", letra, i);
 			flag = true;
 			break;
 		}
@@ -19,6 +19,6 @@ void linearSearchArray (char vetor[], char letra)
 	
 	if (!flag)
 	{
-		printf ("\n\nA Letra [%c] informada N√O foi encontrada na String criada!", letra);
+		printf ("\n\nA Letra [%c] informada N√ÉO foi encontrada na String criada!", letra);
 	}
 }
