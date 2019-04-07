@@ -1,30 +1,30 @@
-/*	Biblioteca do Tipo Abstrato de Dado: ¡rvore Bin·ria de Busca SEM BALANCEAMENTO
+/*	Biblioteca do Tipo Abstrato de Dado: √Årvore Bin√°ria de Busca SEM BALANCEAMENTO
 
 	Autor: Alexandre Gadelha
 	
-	OperaÁıes da ¡rvore Bin·ria de Busca apresentadas aqui:
+	Opera√ß√µes da √Årvore Bin√°ria de Busca apresentadas aqui:
 	
-	a) OperaÁ„o de RESET (Limpeza da ¡rvore toda).
-	b) Processo de Limpeza da ¡rvore de Busca (Se estiver na operaÁ„o de RESET).
-	c) Inserir Valor na ¡rvore que N√O SEJA REPETIDO.
-	d) Percurso PrÈ-ordem da ¡rvore: RAIZ, SAE, SAD.
-	e) Percurso Ordem SimÈtrica da ¡rvore: SAE, RAIZ, SAD.
-	f) Percurso PÛs-ordem da ¡rvore: SAE, SAD, RAIZ.
-	g) Pesquisa de Valores na ¡rvore de Busca.
-	h) IdentificaÁ„o e preparaÁ„o para o processo de remoÁ„o de elemento da ¡rvore.
-	i) RemoÁ„o real do elemento da ¡rvore onde o resultado final seja N” FOLHA ou N” de GRAU 1.
+	a) Opera√ß√£o de RESET (Limpeza da √Årvore toda).
+	b) Processo de Limpeza da √Årvore de Busca (Se estiver na opera√ß√£o de RESET).
+	c) Inserir Valor na √Årvore que N√ÉO SEJA REPETIDO.
+	d) Percurso Pr√©-ordem da √Årvore: RAIZ, SAE, SAD.
+	e) Percurso Ordem Sim√©trica da √Årvore: SAE, RAIZ, SAD.
+	f) Percurso P√≥s-ordem da √Årvore: SAE, SAD, RAIZ.
+	g) Pesquisa de Valores na √Årvore de Busca.
+	h) Identifica√ß√£o e prepara√ß√£o para o processo de remo√ß√£o de elemento da √Årvore.
+	i) Remo√ß√£o real do elemento da √Årvore onde o resultado final seja N√ì FOLHA ou N√ì de GRAU 1.
 	
-	OBS 1: No processo de remoÁ„o de um N” de GRAU 2, faremos o processo de obter o MENOR ¿ DIREITA
-	       DO VALOR A SER REMOVIDO (O Menor Valor da SAD deste elemento). Contudo, se quisÈssemos
-	       obter o MAIOR ELEMENTO ¿ ESQUERDA DESTE VALOR (O Maior Valor da SAE deste elemento), tambÈm
+	OBS 1: No processo de remo√ß√£o de um N√ì de GRAU 2, faremos o processo de obter o MENOR √Ä DIREITA
+	       DO VALOR A SER REMOVIDO (O Menor Valor da SAD deste elemento). Contudo, se quis√©ssemos
+	       obter o MAIOR ELEMENTO √Ä ESQUERDA DESTE VALOR (O Maior Valor da SAE deste elemento), tamb√©m
 	       daria certo.
 	     
-	       Caso n„o haja uma SAE ou SAD prÛxima do Valor em quest„o de acordo com o processo escolhido,
-	       dever· ser feito um tratamento especÌfico a pegar o mais prÛximo elemento ativo dele, em
+	       Caso n√£o haja uma SAE ou SAD pr√≥xima do Valor em quest√£o de acordo com o processo escolhido,
+	       dever√° ser feito um tratamento espec√≠fico a pegar o mais pr√≥ximo elemento ativo dele, em
 	       outras palavras, aquele filho ativo (Elemento Esquerda da SAE ou Elemento Direita da SAD).
 	
-	OBS 2: Vari·vel Global (_blocos) ir· contar quantos Blocos de MemÛria foram removidos no total
-	       durante o processo de Limpeza da ¡rvore Bin·ria de Busca.
+	OBS 2: Vari√°vel Global (_blocos) ir√° contar quantos Blocos de Mem√≥ria foram removidos no total
+	       durante o processo de Limpeza da √Årvore Bin√°ria de Busca.
 */
 
 int _blocos = 0;
@@ -41,57 +41,57 @@ void removerLetraReal (struct BinaryTreeSearch *NoAncestral, struct BinaryTreeSe
 {
 	struct BinaryTreeSearch *NoExcluido;
 	
-	/* IF: Caso de exclus„o de elemento que seja N” FOLHA (GRAU 0). Nesse caso, apenas redireciona-se o Ponteiro da Esquerda ou
-	       da Direita do elemento ancestral, de acordo com o seu Valor em comparaÁ„o a ele, pra NULL (IF-ELSE internos).
+	/* IF: Caso de exclus√£o de elemento que seja N√ì FOLHA (GRAU 0). Nesse caso, apenas redireciona-se o Ponteiro da Esquerda ou
+	       da Direita do elemento ancestral, de acordo com o seu Valor em compara√ß√£o a ele, pra NULL (IF-ELSE internos).
 		   
-		   No caso exclusivo da RAIZ, esta passar· a apontar pra NULL, uma vez que a ¡rvore estar· VAZIA!
+		   No caso exclusivo da RAIZ, esta passar√° a apontar pra NULL, uma vez que a √Årvore estar√° VAZIA!
 		   
-		   OBS: O Ponteiro "NoExcluido" recebe o elemento da ¡rvore a ser excluÌdo DEPOIS das operaÁıes do IF principal!
+		   OBS: O Ponteiro "NoExcluido" recebe o elemento da √Årvore a ser exclu√≠do DEPOIS das opera√ß√µes do IF principal!
 	   
-	   ELSE: Caso de exclus„o de elemento que seja N” de GRAU 1, possuindo apenas UM FILHO. Nesse caso, È verificado qual elemento
-	         estar· disponÌvel para tomar seu lugar, sendo a Esquerda dele ou a Direita (IF-ELSE em CondiÁ„o Tern·ria superior).
-			 O elemento disponÌvel ser· apontado pelo elemento ancestral da Esquerda ou da Direita dependendo de seu Valor perante
-			 a ele (IF-ELSE em CondiÁ„o Tern·ria inferior) num processo parecido com o da exclus„o de um N” FOLHA.
+	   ELSE: Caso de exclus√£o de elemento que seja N√ì de GRAU 1, possuindo apenas UM FILHO. Nesse caso, √© verificado qual elemento
+	         estar√° dispon√≠vel para tomar seu lugar, sendo a Esquerda dele ou a Direita (IF-ELSE em Condi√ß√£o Tern√°ria superior).
+			 O elemento dispon√≠vel ser√° apontado pelo elemento ancestral da Esquerda ou da Direita dependendo de seu Valor perante
+			 a ele (IF-ELSE em Condi√ß√£o Tern√°ria inferior) num processo parecido com o da exclus√£o de um N√ì FOLHA.
 			 
-		     No caso exclusivo da RAIZ, esta passar· a apontar pra esse elemento ("NoAtual" depois da mudanÁa) sendo da Esquerda ou da
-		     Direita do elemento a ser excluÌdo posteriormente ("NoAtual" antes da mudanÁa. Agora, na vari·vel "NoExcluido").
+		     No caso exclusivo da RAIZ, esta passar√° a apontar pra esse elemento ("NoAtual" depois da mudan√ßa) sendo da Esquerda ou da
+		     Direita do elemento a ser exclu√≠do posteriormente ("NoAtual" antes da mudan√ßa. Agora, na vari√°vel "NoExcluido").
 		     
-		     OBS: O Ponteiro "NoExcluido" recebe o elemento da ¡rvore a ser excluÌdo ANTES das operaÁıes do ELSE principal!
+		     OBS: O Ponteiro "NoExcluido" recebe o elemento da √Årvore a ser exclu√≠do ANTES das opera√ß√µes do ELSE principal!
 	   
-	    Depois de realizadas as devidas operaÁıes antes da exclus„o, o elemento È finalmente eliminado da ¡rvore Bin·ria de Busca. O
-	    antigo elemento "NoAtual" foi atribuÌdo ao Ponteiro "NoExcluido" pra ser possÌvel as operaÁıes e tambÈm pra exclus„o dar certo! */
+	    Depois de realizadas as devidas opera√ß√µes antes da exclus√£o, o elemento √© finalmente eliminado da √Årvore Bin√°ria de Busca. O
+	    antigo elemento "NoAtual" foi atribu√≠do ao Ponteiro "NoExcluido" pra ser poss√≠vel as opera√ß√µes e tamb√©m pra exclus√£o dar certo! */
 	
 	if ((!NoAtual->left) && (!NoAtual->right))
 	{		
-		if (NoAtual == root)						// Caso especÌfico da exclus„o da RAIZ da ¡rvore
+		if (NoAtual == root)						// Caso espec√≠fico da exclus√£o da RAIZ da √Årvore
 		{
 			root = NULL;
 		}
-		else										// Para todos os outros casos de exclus„o de elementos...
+		else										// Para todos os outros casos de exclus√£o de elementos...
 		{
 			(NoAtual->letra < NoAncestral->letra) ? (NoAncestral->left = NULL) : (NoAncestral->right = NULL);
 		}
 		
 		NoExcluido = NoAtual;
-		printf ("\n\nA Letra [%c], que È um N” FOLHA, foi excluÌda com sucesso!", letra);
+		printf ("\n\nA Letra [%c], que √© um N√ì FOLHA, foi exclu√≠da com sucesso!", letra);
 	}
 	else
 	{
 		NoExcluido = NoAtual;
 		
-		if (NoAtual == root)						// Caso especÌfico da exclus„o da RAIZ da ¡rvore
+		if (NoAtual == root)						// Caso espec√≠fico da exclus√£o da RAIZ da √Årvore
 		{
 			(!NoAtual->left && NoAtual->right) ? (NoAtual = NoAtual->right) : (NoAtual = NoAtual->left);
 					
 			root = NoAtual;
 		}
-		else										// Para todos os outros casos de exclus„o de elementos...
+		else										// Para todos os outros casos de exclus√£o de elementos...
 		{	
 			(!NoAtual->left && NoAtual->right) ? (NoAtual = NoAtual->right) : (NoAtual = NoAtual->left);
 					
 			(NoAtual->letra < NoAncestral->letra) ? (NoAncestral->left = NoAtual) : (NoAncestral->right = NoAtual);
 		}
-		printf ("\n\nA Letra [%c], que È um N” DE GRAU 1, foi excluÌda com sucesso!", letra);
+		printf ("\n\nA Letra [%c], que √© um N√ì DE GRAU 1, foi exclu√≠da com sucesso!", letra);
 	}
 	free (NoExcluido);
 }
@@ -126,9 +126,9 @@ void removerLetraArvoreBusca (struct BinaryTreeSearch *NoAncestral, struct Binar
 			NoAncestral = NoAtual;
 			NoProfundo = NoAtual->right;
 			
-			printf ("\n\nA Letra [%c] È um N” DE GRAU 2 na ¡rvore: … achar um substituto e excluir na segunda fase...", letra);
+			printf ("\n\nA Letra [%c] √© um N√ì DE GRAU 2 na √Årvore: √â achar um substituto e excluir na segunda fase...", letra);
 			
-			if (!NoProfundo->left)						// Caso exclusivo de carÍncia de elementos MENORES na SAD da ¡rvore Bin·ria
+			if (!NoProfundo->left)						// Caso exclusivo de car√™ncia de elementos MENORES na SAD da √Årvore Bin√°ria
 			{
 				alce = NoProfundo->letra;
 				NoProfundo->letra = NoAncestral->letra;
@@ -136,10 +136,10 @@ void removerLetraArvoreBusca (struct BinaryTreeSearch *NoAncestral, struct Binar
 				
 				NoAncestral->right = NoProfundo->right;
 				
-				printf ("\n\nA Letra [%c] foi removida diretamente com sucesso da ¡rvore de Busca!", letra);
+				printf ("\n\nA Letra [%c] foi removida diretamente com sucesso da √Årvore de Busca!", letra);
 				free (NoProfundo);
 			}
-			else										// Casos comuns onde, geralmente, h· elementos MENORES na SAD da ¡rvore Bin·ria
+			else										// Casos comuns onde, geralmente, h√° elementos MENORES na SAD da √Årvore Bin√°ria
 			{
 				while (NoProfundo->left)
 				{
@@ -161,7 +161,7 @@ void removerLetraArvoreBusca (struct BinaryTreeSearch *NoAncestral, struct Binar
 	}
 	else
 	{
-		printf ("\n\nA Letra [%c] informada n„o foi encontrada para a sua remoÁ„o!", letra);
+		printf ("\n\nA Letra [%c] informada n√£o foi encontrada para a sua remo√ß√£o!", letra);
 	}
 }
 
@@ -268,7 +268,7 @@ void inserirElementoArvoreBusca (struct BinaryTreeSearch *NoAncestral, struct Bi
 		}
 		else
 		{
-			printf ("\n\nN√O SER√O permitidas Letras Iguais na ¡rvore de Busca: Letra [%c] j· presente!", letra);
+			printf ("\n\nN√ÉO SER√ÉO permitidas Letras Iguais na √Årvore de Busca: Letra [%c] j√° presente!", letra);
 			break;
 		}
 	}
@@ -283,19 +283,19 @@ void inserirElementoArvoreBusca (struct BinaryTreeSearch *NoAncestral, struct Bi
 		if (!NoAncestral)
 		{
 			root = NoAtual;
-			printf ("\n\nLetra [%c] foi adicionada diretamente na RAIZ da ¡rvore!", letra);
+			printf ("\n\nLetra [%c] foi adicionada diretamente na RAIZ da √Årvore!", letra);
 		}
 		else
 		{
 			if (NoAtual->letra < NoAncestral->letra)
 			{
 				NoAncestral->left = NoAtual;
-				printf ("\n\nLetra [%c] foi adicionada ¿ ESQUERDA de [%c]", letra, NoAncestral->letra);
+				printf ("\n\nLetra [%c] foi adicionada √Ä ESQUERDA de [%c]", letra, NoAncestral->letra);
 			}
 			else
 			{
 				NoAncestral->right = NoAtual;
-				printf ("\n\nLetra [%c] foi adicionada ¿ DIREITA de [%c]", letra, NoAncestral->letra);
+				printf ("\n\nLetra [%c] foi adicionada √Ä DIREITA de [%c]", letra, NoAncestral->letra);
 			}
 		}
 	}
@@ -318,7 +318,7 @@ void resetArvoreBusca (struct BinaryTreeSearch *NoAtual)
 	{
 		limpezaArvoreBusca (NoAtual);
 		
-		printf ("\n\nForam removidos %d Blocos de MemÛria da ¡rvore de Busca!", _blocos);
+		printf ("\n\nForam removidos %d Blocos de Mem√≥ria da √Årvore de Busca!", _blocos);
 		root = NULL;
 		_blocos = 0;
 	}
